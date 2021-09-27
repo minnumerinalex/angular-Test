@@ -1,5 +1,10 @@
-
 <h2>Parent Component</h2>
 <div>Send a message to child:<input [(ngModel)]="parentMsg" /></div>
 <div>Message from Child is: {{ childOutputMsg }}</div>
 <child [childInput]="parentMsg" (childOutput)="getChildOutput($event)"></child>
+<div>
+  <h1>Observable</h1>
+  <br />
+  <button (click)="unSubcribeData()">Unsubcribe</button>
+  {{ data | json }}
+</div>
