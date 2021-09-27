@@ -11,11 +11,18 @@ export class AppComponent implements OnInit {
   longitude: any;
   latitude: any;
   data: any;
+  users$: any;
+  user: any;
   private subscription: Subscription;
   constructor(private dataService: AppService) {}
   ngOnInit() {
     this.getData();
     // setInterval(() => this.getData(), 4000);
+    this.dataService.getUsers().subscribe((result) => (this.users$ = result));
+
+    // ((result) => {this.user = result;
+    //   console.log(this.user);}
+    // );
   }
   getData() {
     this.subscription = this.dataService.getValues().subscribe((value) => {

@@ -11,5 +11,13 @@ export class AppService {
    {
     return this.http.get('https://api.wheretheiss.at/v1/satellites/25544');
    }
-
+  
+  getUsers()
+  {
+   return this.http.get('https://jsonplaceholder.typicode.com/users');
+  }
+  getUser()
+  {
+   return this.http.get('https://jsonplaceholder.typicode.com/users/1');
+  }
 }
