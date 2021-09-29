@@ -1,4 +1,10 @@
-<h2>Parent Component</h2>
+<h2>
+  Parent Component
+  <br />
+  INNER HTML :
+  <h3 [innerHTML]="innerhtml"></h3>
+</h2>
+<div>Time: {{ time | async }}</div>
 <div>Send a message to child:<input [(ngModel)]="parentMsg" /></div>
 <div>Message from Child is: {{ childOutputMsg }}</div>
 <child [childInput]="parentMsg" (childOutput)="getChildOutput($event)"></child>
@@ -6,9 +12,7 @@
   <h1>Observable</h1>
   <br />
   <ul>
-    <li *ngFor='let user of users$'>
-      {{user.name}} || {{user.email}}
-    </li>
+    <li *ngFor="let user of users$">{{ user.name }} || {{ user.email }}</li>
   </ul>
   <button (click)="unSubcribeData()">Unsubcribe</button>
   {{ data | json }}
